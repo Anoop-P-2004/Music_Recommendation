@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>MUSIC RECOMMENDATION</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href="{{ url_for('static',filename='main.css') }}">
+    <script src='main.js'></script>
+</head>
+<body>
+    <div class="input">
+        <h1>Music Recommendation System</h1>
+        <form action="prediction" name="form1" method="post">
+            <label for="songs" class="label1">Select a song from dropbox</label><br>
+            <select  name="songs" required >
+                {% for song in songs %}
+                    <option value="{{ song }}" >{{ song }}</option>
+                {% endfor %}
+            </select>
+            <input class='button1' value='Get recommendations' type="submit">
+        </form>
+    </div>
+    <div class="result">
+        {% block r1 %}
+        {% endblock %}
+    </div>
+</body>
+</html>
+
+</html>

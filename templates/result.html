@@ -1,0 +1,9 @@
+{% extends "index.html" %}
+{% block r1 %}
+    <h2>Recommendations for song "{{ selected_song }}"</h2>
+    {% for song in rec_songs  %}
+        <div>
+            {{ song }}
+        </div>
+    {% endfor %}
+{% endblock %}
